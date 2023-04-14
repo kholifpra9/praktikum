@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="byID">Sebelum Diklik</p>
+    <p class="byClass">Sebelum Diklik</p>
+    <p class="byClass">Sebelum Diklik</p>
+    <button onclick="demoID()">Tombol</button>
+
+    <div class="container">
+        <h1>Belajar DOM</h1>
+        <button onclick="demoMode()" id="malam">Mode Malam</button>
+        <div class="box">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam corrupti molestiae consequuntur iure numquam necessitatibus quam dolores tempora,
+                 obcaecati totam excepturi repellendus nostrum? Delectus, commodi eligendi laborum pariatur a recusandae?</p>
+        </div>
+    </div>
+
+    <script>
+        function demoMode(){
+            let demo = document.getElementsByClassName('container');
+            let text = document.getElementsByTagName('button');
+            demo[0].style.background = 'black';
+            demo[0].style.color = "white";
+            text[1].textContent = 'Mode Siang';
+            // let txt = document.getElementById('malam');
+            // if(text == 'Mode Malam'){
+            //     text.innerHTML = 'Mode Siang';
+            //     demo.style.background = "Black";
+            // }else{
+            //     text.innerHTML = 'Mode Malam';
+            //     demo.style.background = "Yellow";
+            // }  
+
+        }
+        function demoID(){
+            let demo = document.getElementById('byID');
+            let text = document.getElementById('byID').textContent;
+            if(text == 'Sebelum Diklik'){
+                demo.innerHTML = 'Setelah Diubah';
+            }else{
+                demo.innerHTML = 'Sebelum Diklik';
+            }            
+        }
+
+        function demoTag(){
+            let demo = document.getElementsByTagName('p');
+            for (let index = 0; index < 3; index++) {
+                demo[index].innerHTML = 'Setelah Diubah';;
+            }
+        }
+        function demoClass(){
+            let demo = document.getElementsByClassName('byClass');
+            for (let index = 0; index < 3; index++) {
+                demo[index].innerHTML = 'Setelah Diubah';
+            }
+        }
+        function demoQuery(){
+            let demo = document.querySelectorAll('.byClass');
+            for (let index = 0; index < 3; index++) {
+                demo[index].innerHTML = 'Setelah Diubah';
+            }
+        }
+    </script>
+</body>
+</html>
